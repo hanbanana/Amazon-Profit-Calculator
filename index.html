@@ -19,10 +19,13 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 </head>
 
@@ -59,7 +62,7 @@
                                 from Supplier</label>
                             <div class="col-sm-3">
                                 <input class="form-control form-control-sm" type="number"
-                                    placeholder="Item Price from China" name="BL" id="supplierPrice" required
+                                    placeholder="Item Price from China" id="supplierPrice"
                                     style="text-transform: uppercase">
                             </div>
                             <div class="col-sm-1">
@@ -75,7 +78,7 @@
                                 Quantity</label>
                             <div class="col-sm-3">
                                 <input class="form-control form-control-sm" type="number" placeholder="Order Quantity"
-                                    name="BL" id="orderQuantity" required style="text-transform: uppercase">
+                                    id="orderQuantity" style="text-transform: uppercase">
                             </div>
                             <div class="col-sm-1">
 
@@ -90,7 +93,7 @@
                                 (from Supplier to US Inspector or Amazon Warehouse)</label>
                             <div class="col-sm-3">
                                 <input class="form-control form-control-sm" type="number"
-                                    placeholder="Ship From China To US" name="BL" id="shipToUsOrAmazon" required
+                                    placeholder="Ship From China To US" name="BL" id="shipToUsOrAmazon"
                                     style="text-transform: uppercase">
                             </div>
                             <div class="col-sm-1">
@@ -106,7 +109,7 @@
                                 (from US Office to Amazon Warehouse)</label>
                             <div class="col-sm-3">
                                 <input class="form-control form-control-sm" type="number"
-                                    placeholder="Ship From US To Amazon" name="BL" id="shipToAmazon" required
+                                    placeholder="Ship From US To Amazon" name="BL" id="shipToAmazon"
                                     style="text-transform: uppercase">
                             </div>
                             <div class="col-sm-1">
@@ -122,7 +125,7 @@
                                 Fee</label>
                             <div class="col-sm-3">
                                 <input class="form-control form-control-sm" type="number" placeholder="UPC Code Fee"
-                                    name="BL" id="upcCode" required style="text-transform: uppercase">
+                                    name="BL" id="upcCode" style="text-transform: uppercase">
                             </div>
                             <div class="col-sm-1">
 
@@ -137,7 +140,7 @@
                                 stickers Fee</label>
                             <div class="col-sm-3">
                                 <input class="form-control form-control-sm" type="number"
-                                    placeholder="Barcode stickers Fee" name="BL" id="upcSticker" required
+                                    placeholder="Barcode stickers Fee" name="BL" id="upcSticker"
                                     style="text-transform: uppercase">
                             </div>
                             <div class="col-sm-1">
@@ -153,7 +156,7 @@
                                 on each listing on Amazon</label>
                             <div class="col-sm-3">
                                 <input class="form-control form-control-sm" type="number"
-                                    placeholder="Listing Item Quantity" name="BL" id="itemQuantityOnListing" required
+                                    placeholder="Listing Item Quantity" name="BL" id="itemQuantityOnListing"
                                     style="text-transform: uppercase">
                             </div>
                             <div class="col-sm-1">
@@ -169,7 +172,7 @@
                                 on Amazon</label>
                             <div class="col-sm-3">
                                 <input class="form-control form-control-sm" type="number"
-                                    placeholder="Listing Item Price" name="BL" id="priceOnAmazon" required
+                                    placeholder="Listing Item Price" name="BL" id="priceOnAmazon"
                                     style="text-transform: uppercase">
                             </div>
                             <div class="col-sm-1">
@@ -186,7 +189,7 @@
                                         how</a></small></label>
                             <div class="col-sm-3">
                                 <input class="form-control form-control-sm" type="number" placeholder="Amazon Fee"
-                                    name="BL" id="amazonFee" required style="text-transform: uppercase">
+                                    name="BL" id="amazonFee" style="text-transform: uppercase">
                             </div>
                             <div class="col-sm-1">
 
@@ -201,7 +204,7 @@
                                 Amazon Fee</label>
                             <div class="col-sm-3">
                                 <input class="form-control form-control-sm" type="number" placeholder="FBA Fee"
-                                    name="BL" id="fbaFee" required style="text-transform: uppercase">
+                                    name="BL" id="fbaFee" style="text-transform: uppercase">
                             </div>
                             <div class="col-sm-1">
 
@@ -212,7 +215,7 @@
 
                         <div class="row">
                             <div class="col text-center">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="button" id="submitButton" class="btn btn-primary">Submit</button>
                             </div>
                         </div>
                         <br>
@@ -236,7 +239,7 @@
                                 from Supplier</label>
                             <div class="col-sm-3">
                                 <input class="form-control form-control-sm" type="number"
-                                    placeholder="Item Price from China" name="BL" id="supplierPrice" required
+                                    placeholder="Item Price from China" name="BL" id="supplierPrice"
                                     style="text-transform: uppercase">
                             </div>
                             <div class="col-sm-1">
@@ -252,7 +255,7 @@
                                 Quantity</label>
                             <div class="col-sm-3">
                                 <input class="form-control form-control-sm" type="number" placeholder="Order Quantity"
-                                    name="BL" id="orderQuantity" required style="text-transform: uppercase">
+                                    name="BL" id="orderQuantity" style="text-transform: uppercase">
                             </div>
                             <div class="col-sm-1">
 
@@ -276,7 +279,8 @@
                             <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm">Total Cost to
                                 Amazon FBA Warehouse</label>
                             <div class="col-sm-3">
-                                <h3 id="totalCostToAmazon"></h3>
+                                <h3 id="result-totalCostToAmazon"></h3>
+                                
                             </div>
                             <div class="col-sm-1">
 
@@ -290,7 +294,7 @@
                             <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm">Amazon FBA Fee
                                 / Each Listing</label>
                             <div class="col-sm-3">
-                                <h3 id="amazonFbmFee"></h3>
+                                <h3 id="result-amazonFbmFee"></h3>
                             </div>
                             <div class="col-sm-1">
 
@@ -304,7 +308,7 @@
                             <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm">Net Profit
                                 from Amazon / Each Listing</label>
                             <div class="col-sm-3">
-                                <h3 id="netProfitFromAmazon"></h3>
+                                <h3 id="result-netProfitFromAmazon"></h3>
                             </div>
                             <div class="col-sm-1">
 
@@ -319,7 +323,7 @@
                                 Purchasing Price on Each Item From Supplier to Amazon Warehouse(not include FBA
                                 fees)</label>
                             <div class="col-sm-3">
-                                <h3 id="finalPurchasingItemPrice"></h3>
+                                <h3 id="result-finalPurchasingItemPrice"></h3>
                             </div>
                             <div class="col-sm-1">
 
@@ -334,7 +338,7 @@
                                 Purchasing Price on Each Listing From Supplier to Amazon Warehouse(not include FBA
                                 fees)</label>
                             <div class="col-sm-3">
-                                <h3 id="finalPurchasingListingPrice"></h3>
+                                <h3 id="result-finalPurchasingListingPrice"></h3>
                             </div>
                             <div class="col-sm-1">
 
@@ -348,7 +352,7 @@
                             <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm">Final Profit /
                                 Each Listing</label>
                             <div class="col-sm-3">
-                                <h3 id="finalProfit"></h3>
+                                <h3 id="result-finalProfit"></h3>
                             </div>
                             <div class="col-sm-1">
 
@@ -387,16 +391,17 @@
                                 <img src="./images/sample_amazon_fbm_calculator.PNG" height="600" width="500">
                             </div>
 
-                            
+
 
                             <div class="col-sm-1">
                             </div>
 
                         </div>
-                        <a href="https://sellercentral.amazon.com/fba/profitabilitycalculator/index?lang=en_US" target="_blank"><i class="fab fa-amazon"></i> Go to Amazon FBA Calculator on Amazon</a>
+                        <a href="https://sellercentral.amazon.com/fba/profitabilitycalculator/index?lang=en_US"
+                            target="_blank"><i class="fab fa-amazon"></i> Go to Amazon FBA Calculator on Amazon</a>
                         <br>
                     </div>
-                        
+
                 </div>
                 <div class="col-lg-3"></div>
             </div>
