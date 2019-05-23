@@ -21,6 +21,7 @@ $(document).ready(function () {
   var result_finalPurchasingListingPrice = 0;
   var result_shipUs = 0;
   var result_shipAmazon = 0;
+  var result_shipCostEachItem = 0;
 
 
   function initializeCalculator() {
@@ -42,9 +43,30 @@ $(document).ready(function () {
     result_finalProfit = "";
     result_shipUs = "";
     result_shipAmazon = "";
+    result_shipCostEachItem = "";
 
 
-    $("#supplierPrice, #orderQuantity, #shipToUsOrAmazon, #shipToAmazon, #upcCode, #upcSticker, #itemQuantityOnListing, #priceOnAmazon, #amazonFee, #fbaFee, #result-totalCostToAmazon, #result-amazonFbmFee, #result-amazonFbmFee, #result-netProfitFromAmazon, #result-finalPurchasingItemPrice, #result-finalPurchasingListingPrice, #result-finalProfit").empty();
+    $("#supplierPrice, #orderQuantity, #shipToUsOrAmazon, #shipToAmazon, #upcCode, #upcSticker, #itemQuantityOnListing, #priceOnAmazon, #amazonFee, #fbaFee, #result-totalCostToAmazon, #result-amazonFbmFee, #result-amazonFbmFee, #result-netProfitFromAmazon, #result-finalPurchasingItemPrice, #result-finalPurchasingListingPrice, #result-finalProfit, #result_shipAmazon, #result_shipUs, #result_shipCostEachItem").empty();
+  };
+
+  function initializeShippingCost() {
+    result_shipUs = "";
+    result_shipAmazon = "";
+    result_shipCostEachItem = "";
+
+
+    $("#result_shipAmazon, #result_shipUs, #result_shipCostEachItem").empty();
+  };
+
+  function initializeResult() {
+    result_totalCostToAmazon = "";
+    result_amazonFbmFee = "";
+    result_netProfitFromAmazon = "";
+    result_finalPurchasingItemPrice = "";
+    result_finalPurchasingListingPrice = "";
+    result_finalProfit = "";
+
+    $("#result-totalCostToAmazon, #result-amazonFbmFee, #result-amazonFbmFee, #result-netProfitFromAmazon, #result-finalPurchasingItemPrice, #result-finalPurchasingListingPrice, #result-finalProfit").empty();
   };
 
 
@@ -72,6 +94,7 @@ $(document).ready(function () {
     result_finalProfit = price_on_amazon - amazon_fee - result_finalPurchasingListingPrice;
     result_shipUs = (supplier_price * order_quantity) * 0.6;
     result_shipAmazon = (supplier_price * order_quantity) * 0.4;
+    result_shipCostEachItem = (ship_to_us_or_amazon + ship_to_amazon) / order_quantity;
 
 
     $("#result-totalCostToAmazon").text(result_totalCostToAmazon.toFixed(2));
@@ -80,17 +103,50 @@ $(document).ready(function () {
     $("#result-finalPurchasingItemPrice").text(result_finalPurchasingItemPrice.toFixed(2));
     $("#result-finalPurchasingListingPrice").text(result_finalPurchasingListingPrice.toFixed(2));
     $("#result-finalProfit").text(result_finalProfit.toFixed(2));
+    // $("#result_shipUs").text(result_shipUs.toFixed(2));
+    // $("#result_shipAmazon").text(result_shipAmazon.toFixed(2));
+    $("#result_shipCostEachItem").text(result_shipCostEachItem.toFixed(2));
+  
+
+  })
+  
+  $("#shippingCostButton").on("click", function () {
+    event.preventDefault();
+
+    supplier_price = parseInt(document.getElementById("supplierPrice").value);
+    order_quantity = parseInt(document.getElementById("orderQuantity").value);
+    ship_to_us_or_amazon = parseInt(document.getElementById("shipToUsOrAmazon").value);
+    ship_to_amazon = parseInt(document.getElementById("shipToAmazon").value);
+
+    result_shipUs = (supplier_price * order_quantity) * 0.6;
+    result_shipAmazon = (supplier_price * order_quantity) * 0.4;
+    
+    
     $("#result_shipUs").text(result_shipUs.toFixed(2));
     $("#result_shipAmazon").text(result_shipAmazon.toFixed(2));
   
-
-    console.log(result_totalCostToAmazon);
+  
   })
 
 
+  $("#clearAllButton").on("click", function () {
+    location.reload();
+    // initializeCalculator();
+  })
 
-  $("#clearButton").on("click", function () {
-    initializeCalculator();
+  $("#clearInfoButton").on("click", function () {
+    location.reload();
+    // initializeCalculator();
+  })
+
+  $("#clearShipCostButton").on("click", function () {
+    // location.reload();
+    initializeShippingCost();
+  })
+
+  $("#clearResultButton").on("click", function () {
+    // location.reload();
+    initializeResult();
   })
 
 
