@@ -19,7 +19,8 @@ $(document).ready(function () {
   var result_netProfitFromAmazon = 0;
   var result_finalPurchasingItemPrice = 0;
   var result_finalPurchasingListingPrice = 0;
-
+  var result_shipUs = 0;
+  var result_shipAmazon = 0;
 
 
   function initializeCalculator() {
@@ -33,27 +34,64 @@ $(document).ready(function () {
     price_on_amazon = "";
     amazon_fee = "";
     fba_fee = "";
+    result_totalCostToAmazon = "";
+    result_amazonFbmFee = "";
+    result_netProfitFromAmazon = "";
+    result_finalPurchasingItemPrice = "";
+    result_finalPurchasingListingPrice = "";
+    result_finalProfit = "";
+    result_shipUs = "";
+    result_shipAmazon = "";
 
-    $("#supplierPrice, #orderQuantity, #shipToUsOrAmazon, #shipToAmazon, #upcCode, #upcSticker, #itemQuantityOnListing, #priceOnAmazon, #amazonFee, #fbaFee").empty();
+
+    $("#supplierPrice, #orderQuantity, #shipToUsOrAmazon, #shipToAmazon, #upcCode, #upcSticker, #itemQuantityOnListing, #priceOnAmazon, #amazonFee, #fbaFee, #result-totalCostToAmazon, #result-amazonFbmFee, #result-amazonFbmFee, #result-netProfitFromAmazon, #result-finalPurchasingItemPrice, #result-finalPurchasingListingPrice, #result-finalProfit").empty();
   };
 
 
 
 
   $("#submitButton").on("click", function () {
-    supplier_price = $("#supplierPrice").val();
-    order_quantity = $("#orderQuantity").val();
+    event.preventDefault();
 
-    result_totalCostToAmazon = supplier_price + order_quantity;
+    supplier_price = parseInt(document.getElementById("supplierPrice").value);
+    order_quantity = parseInt(document.getElementById("orderQuantity").value);
+    ship_to_us_or_amazon = parseInt(document.getElementById("shipToUsOrAmazon").value);
+    ship_to_amazon = parseInt(document.getElementById("shipToAmazon").value);
+    upc_code = parseInt(document.getElementById("upcCode").value);
+    upc_sticker = parseInt(document.getElementById("upcSticker").value);
+    item_quantity_on_listing = parseInt(document.getElementById("itemQuantityOnListing").value);
+    price_on_amazon = parseInt(document.getElementById("priceOnAmazon").value);
+    amazon_fee = parseInt(document.getElementById("amazonFee").value);
+    fba_fee = parseInt(document.getElementById("fbaFee").value);
 
-    $("#result-totalCostToAmazon").text(result_totalCostToAmazon);
+    result_totalCostToAmazon = (supplier_price * order_quantity) + ship_to_us_or_amazon + ship_to_amazon + upc_code + upc_sticker;
+    result_amazonFbmFee = amazon_fee + fba_fee;
+    result_netProfitFromAmazon = price_on_amazon - amazon_fee - fba_fee;
+    result_finalPurchasingItemPrice = result_totalCostToAmazon / order_quantity;
+    result_finalPurchasingListingPrice = item_quantity_on_listing * (result_totalCostToAmazon / order_quantity);
+    result_finalProfit = price_on_amazon - amazon_fee - result_finalPurchasingListingPrice;
+    result_shipUs = (supplier_price * order_quantity) * 0.6;
+    result_shipAmazon = (supplier_price * order_quantity) * 0.4;
+
+
+    $("#result-totalCostToAmazon").text(result_totalCostToAmazon.toFixed(2));
+    $("#result-amazonFbmFee").text(result_amazonFbmFee.toFixed(2));
+    $("#result-netProfitFromAmazon").text(result_netProfitFromAmazon.toFixed(2));
+    $("#result-finalPurchasingItemPrice").text(result_finalPurchasingItemPrice.toFixed(2));
+    $("#result-finalPurchasingListingPrice").text(result_finalPurchasingListingPrice.toFixed(2));
+    $("#result-finalProfit").text(result_finalProfit.toFixed(2));
+    $("#result_shipUs").text(result_shipUs.toFixed(2));
+    $("#result_shipAmazon").text(result_shipAmazon.toFixed(2));
+  
 
     console.log(result_totalCostToAmazon);
   })
 
 
 
-
+  $("#clearButton").on("click", function () {
+    initializeCalculator();
+  })
 
 
 })
