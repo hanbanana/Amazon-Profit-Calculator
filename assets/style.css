@@ -43,6 +43,17 @@ body {
     color: orange;
 }
 
+p {
+    font-weight: bolder;
+    color: red;
+    font-size: 12px;
+}
+
+#finalProfitColor {
+    color: orange;
+    font-weight: bolder;
+}
+
 
 @media only screen and (max-width: 600px) {
 
@@ -80,13 +91,13 @@ form {
     margin-right: auto;
 }
 
-p {
-    font-weight: bolder;
-    color: red;
+.btn-primary:hover {
+    background-color: skyblue; 
+    color: black;
 }
 
 
-  }
+};
   
 
 
