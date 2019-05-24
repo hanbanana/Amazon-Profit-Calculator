@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
@@ -27,14 +29,16 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
+        <link rel="stylesheet" type="text/css" href="./style.css">
+
 </head>
 
 <body>
 
-    <div class="mainContent">
+    <div class="container">
 
         <div class="jumbotron" style="padding-top: 30px; padding-bottom: 30px">
-            <h3 class="text-center"><i class="fab fa-amazon"></i> Amazon Profit Estimate Calculator</h3>
+            <h3 class="text-center topLine"><i class="fab fa-amazon"></i> Amazon Profit Estimate Calculator</h3>
             <br>
             <div class="col text-center">
                 <button type="button" class="btn btn-primary" id="clearAllButton">Clear All</button>
@@ -44,12 +48,12 @@
 
 
 
-        <div class="row" style="margin-left: 40px; margin-right: 40px">
+        <div class="row mainMain" style="margin-left: 40px; margin-right: 40px">
 
             <!-- Calculator Panel -->
             <div class="col-lg-6">
                 <div class="card">
-                    <h4 class="card-header">Input Your Item Information</h4>
+                    <h4 class="card-header" id="mainTitle">Input Your Item Information</h4>
 
 
                     <form id="createplan">
@@ -58,7 +62,7 @@
                             <div class="col-sm-1">
 
                             </div>
-                            <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm">Item Price
+                            <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm" id="itemMain">Item Price
                                 from Supplier</label>
                             <div class="col-sm-3">
                                 <input class="form-control form-control-sm" type="number"
@@ -201,7 +205,8 @@
 
                             </div>
                             <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm">Fulfillment by
-                                Amazon Fee</label>
+                                Amazon Fee<small><a href="#instructionPage" target="_blank"> find
+                                        how</a></small></label>
                             <div class="col-sm-3">
                                 <input class="form-control form-control-sm" type="number" placeholder="FBA Fee"
                                     name="fbaFee" id="fbaFee" style="text-transform: uppercase">
@@ -293,7 +298,7 @@
 
                             </div>
                             <div class="col-sm-2">
-                                <label id="result-totalCostToAmazon"></label>
+                                <p id="result-totalCostToAmazon"></p>
                             </div>
                         </div>
                         <hr>
@@ -420,7 +425,7 @@
 
 
                             <div class="col-sm-10">
-                                <img src="./images/sample_amazon_fbm_calculator.PNG" height="600" width="500">
+                                <img class="fbaImage" src="./images/sample_amazon_fbm_calculator.PNG">
                             </div>
 
 
