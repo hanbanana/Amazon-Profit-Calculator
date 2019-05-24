@@ -20,6 +20,29 @@ body {
     font-size: 9px;
 }
 
+.btn-warning {
+    background-color: orange;
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: rgb(245, 207, 118);    
+}
+
+.pull-left {
+    color: white;
+    font-size: 12px;
+}
+
+#amazonLink {
+    color: black;
+    font-size: 12px;
+}
+
+#myGithub {
+    color: orange;
+}
+
 
 @media only screen and (max-width: 600px) {
 
