@@ -226,4 +226,6 @@ console.log(result_totalCostToAmazon_var);
   });
 
 
+  $('[data-toggle="tooltip"]').tooltip();   
+
 })

@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Amazon FBA Profit Calculator</title>
@@ -29,7 +28,7 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
 
 </head>
 
@@ -62,12 +61,12 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
                             <div class="col-sm-1">
 
                             </div>
-                            <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm" id="itemMain">Item Price
+                            <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm"
+                                id="itemMain">Item Price
                                 from Supplier</label>
                             <div class="col-sm-3">
-                                <input class="form-control form-control-sm" type="number"
-                                    placeholder="Item Price" id="supplierPrice" required
-                                    style="text-transform: uppercase">
+                                <input class="form-control form-control-sm" type="number" placeholder="Item Price"
+                                    id="supplierPrice" required style="text-transform: uppercase">
                             </div>
                             <div class="col-sm-1">
 
@@ -143,9 +142,8 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
                             <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm">UPC barcode
                                 stickers Fee</label>
                             <div class="col-sm-3">
-                                <input class="form-control form-control-sm" type="number"
-                                    placeholder="Sticker Fee" name="upcSticker" id="upcSticker"
-                                    style="text-transform: uppercase">
+                                <input class="form-control form-control-sm" type="number" placeholder="Sticker Fee"
+                                    name="upcSticker" id="upcSticker" style="text-transform: uppercase">
                             </div>
                             <div class="col-sm-1">
 
@@ -159,9 +157,9 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
                             <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm">How many items
                                 on each listing on Amazon</label>
                             <div class="col-sm-3">
-                                <input class="form-control form-control-sm" type="number"
-                                    placeholder="Listing Item QTY" name="itemQuantityOnListing"
-                                    id="itemQuantityOnListing" style="text-transform: uppercase">
+                                <input class="form-control form-control-sm" type="number" placeholder="Listing Item QTY"
+                                    name="itemQuantityOnListing" id="itemQuantityOnListing"
+                                    style="text-transform: uppercase">
                             </div>
                             <div class="col-sm-1">
 
@@ -248,7 +246,7 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
 
                             </div>
                             <div class="col-sm-2">
-                                    <p id="result_shipUs"></p>
+                                <p id="result_shipUs"></p>
                             </div>
                         </div>
                         <hr>
@@ -262,7 +260,7 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
 
                             </div>
                             <div class="col-sm-2">
-                                    <p id="result_shipAmazon"></p>
+                                <p id="result_shipAmazon"></p>
                             </div>
                         </div>
                         <hr>
@@ -291,7 +289,10 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
                             <div class="col-sm-1">
 
                             </div>
-                            <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm">Total Cost to
+                            <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm"
+                                data-toggle="tooltip" data-placement="bottom"
+                                title="(Item Price from Supplier x Order Quantity) + Shipping Fee (from Supplier to US Inspector or Amazon Warehouse) + Shipping Fee (from US Office to Amazon Warehouse) + UPC Code + UPC barcode stickers">Total
+                                Cost to
                                 Amazon FBA Warehouse</label>
                             <div class="col-sm-2">
 
@@ -303,23 +304,28 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
                         </div>
                         <hr>
                         <div class="form-group row form-horizontal">
-                                <div class="col-sm-1">
-    
-                                </div>
-                                <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm">Shipping Cost on Each Item</label>
-                                <div class="col-sm-2">
-    
-                                </div>
-                                <div class="col-sm-2">
-                                        <p id="result_shipCostEachItem"></p>
-                                </div>
+                            <div class="col-sm-1">
+
                             </div>
-                            <hr>
+                            <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm"
+                                data-toggle="tooltip" data-placement="bottom"
+                                title="(Shipping Fee (from Supplier to US Inspector or Amazon Warehouse) + Shipping Fee (from US Office to Amazon Warehouse)) / Order Quantity">Shipping
+                                Cost on Each Item</label>
+                            <div class="col-sm-2">
+
+                            </div>
+                            <div class="col-sm-2">
+                                <p id="result_shipCostEachItem"></p>
+                            </div>
+                        </div>
+                        <hr>
                         <div class="form-group row form-horizontal">
                             <div class="col-sm-1">
 
                             </div>
-                            <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm">Amazon FBA Fee
+                            <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm"
+                                data-toggle="tooltip" data-placement="bottom"
+                                title="Selling on Amazon Fee + Fulfillment by Amazon Fee">Amazon FBA Fee
                                 / Each Listing</label>
                             <div class="col-sm-2">
 
@@ -333,7 +339,10 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
                             <div class="col-sm-1">
 
                             </div>
-                            <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm">Net Profit
+                            <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm"
+                                data-toggle="tooltip" data-placement="bottom"
+                                title="Selling Price on Amazon - Selling on Amazon Fee - Fulfillment by Amazon Fee">Net
+                                Profit
                                 from Amazon / Each Listing</label>
                             <div class="col-sm-2">
 
@@ -347,7 +356,9 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
                             <div class="col-sm-1">
 
                             </div>
-                            <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm">Final
+                            <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm"
+                                data-toggle="tooltip" data-placement="bottom"
+                                title="Total Cost to Amazon FBA Warehouse / Order Quantity">Final
                                 Purchasing Price on Each Item From Supplier to Amazon Warehouse(not include FBA
                                 fees)</label>
                             <div class="col-sm-2">
@@ -362,7 +373,9 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
                             <div class="col-sm-1">
 
                             </div>
-                            <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm">Final
+                            <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm"
+                                data-toggle="tooltip" data-placement="bottom"
+                                title=" How many items on each listing on Amazon x (Total Cost to Amazon FBA Warehouse / Order Quantity)">Final
                                 Purchasing Price on Each Listing From Supplier to Amazon Warehouse(not include FBA
                                 fees)</label>
                             <div class="col-sm-2">
@@ -377,7 +390,10 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
                             <div class="col-sm-1">
 
                             </div>
-                            <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm" id="finalProfitColor">Final Profit on
+                            <label for="colFormLabelSm" class="col-sm-7 col-form-label col-form-label-sm"
+                                id="finalProfitColor" data-toggle="tooltip" data-placement="bottom"
+                                title="Selling Price on Amazon - Selling on Amazon Fee - Fulfillment by Amazon Fee - Final Purchasing Price on Each Listing From Supplier to Amazon Warehouse(not include FBA fees)">Final
+                                Profit on
                                 Each Listing</label>
                             <div class="col-sm-2">
 
@@ -391,7 +407,7 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
 
                         <div class="row">
                             <div class="col text-center">
-                               <button type="button" id="clearResultButton" class="btn btn-primary">Clear</button>
+                                <button type="button" id="clearResultButton" class="btn btn-primary">Clear</button>
                             </div>
                         </div>
                         <br>
@@ -435,7 +451,8 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
 
                         </div>
                         <a href="https://sellercentral.amazon.com/fba/profitabilitycalculator/index?lang=en_US"
-                            target="_blank" id="amazonLink"><i class="fab fa-amazon"></i> Go to Amazon FBA Calculator on Amazon</a>
+                            target="_blank" id="amazonLink"><i class="fab fa-amazon"></i> Go to Amazon FBA Calculator on
+                            Amazon</a>
                         <br>
                     </div>
 
@@ -449,7 +466,8 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
 
         <div class="footer">
             <div class="card-footer text-muted text-center">
-                <p class="pull-left">&copy; 2019 - Site Built By H. - <a href="https://www.google.com" target="_blank" id="myGithub">
+                <p class="pull-left">&copy; 2019 - Site Built By H. - <a href="https://www.google.com" target="_blank"
+                        id="myGithub">
                         <i class="fab fa-github"></i> Check My Code on GitHub</a></p>
             </div>
         </div>
