@@ -1,6 +1,6 @@
 # Amazon-Profit-Calculator
 
-Fullscreen Video Website Server
+Amazon Profit Calculator
 
 ## Screenshot
 * Main Page
